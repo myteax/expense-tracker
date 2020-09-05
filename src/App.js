@@ -1,24 +1,85 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer, useState, useEffect } from "react";
+import Header from "./components/Header";
+import "./App.css";
+import Balance from "./components/Balance";
+import TransactionList from "./components/TransactionList";
+import InputSection from "./components/InputSection";
+
+const transactions = [
+  {
+    id: 1,
+    text: "School Fees",
+    amount: -20,
+  },
+  {
+    id: 2,
+    text: "Food",
+    amount: -24,
+  },
+  {
+    id: 3,
+    text: "Salary",
+    amount: 100,
+  },
+];
+const reducer = (state, action) => {
+  switch (action.type) {
+    default:
+      return state;
+    case "ADDITEM":
+      console.log(action.payload);
+      return [...state, action.payload];
+    // return state.push(action.payload);
+    case "DELITEM":
+      return action.payload;
+  }
+};
+
+export const GlobalContext = React.createContext();
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, transactions);
+
+  const [total, setTotal] = useState(0);
+
+  const additem = (y) => {
+    const tran = {
+      id: y.id,
+      text: y.text,
+      amount: parseInt(y.amount),
+    };
+    dispatch({ type: "ADDITEM", payload: tran });
+  };
+
+  const del = (y) => {
+    const tranw = state.filter((tt) => tt.id !== y);
+    console.log(tranw);
+    dispatch({ type: "DELITEM", payload: tranw });
+  };
+
+  useEffect(() => {
+    let gy = 0;
+    state.map((transaction) => {
+      gy = gy + transaction.amount;
+    });
+    setTotal(gy);
+  }, [state]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalContext.Provider
+        value={{
+          transactions: state,
+          total: total,
+          additem,
+          del,
+        }}
+      >
+        <Header />
+        <Balance />
+        <TransactionList />
+        <InputSection />
+      </GlobalContext.Provider>
     </div>
   );
 }
