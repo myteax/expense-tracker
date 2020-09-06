@@ -4,31 +4,16 @@ import "./App.css";
 import Balance from "./components/Balance";
 import TransactionList from "./components/TransactionList";
 import InputSection from "./components/InputSection";
+import Container from "@material-ui/core/Container";
 
-const transactions = [
-  {
-    id: 1,
-    text: "School Fees",
-    amount: -20,
-  },
-  {
-    id: 2,
-    text: "Food",
-    amount: -24,
-  },
-  {
-    id: 3,
-    text: "Salary",
-    amount: 100,
-  },
-];
+const transactions = [];
 const reducer = (state, action) => {
   switch (action.type) {
     default:
       return state;
     case "ADDITEM":
       console.log(action.payload);
-      return [...state, action.payload];
+      return [action.payload, ...state];
     // return state.push(action.payload);
     case "DELITEM":
       return action.payload;
@@ -66,21 +51,23 @@ function App() {
   }, [state]);
 
   return (
-    <div className="App">
-      <GlobalContext.Provider
-        value={{
-          transactions: state,
-          total: total,
-          additem,
-          del,
-        }}
-      >
-        <Header />
-        <Balance />
-        <TransactionList />
-        <InputSection />
-      </GlobalContext.Provider>
-    </div>
+    <Container>
+      <div className="container">
+        <GlobalContext.Provider
+          value={{
+            transactions: state,
+            total: total,
+            additem,
+            del,
+          }}
+        >
+          <Header />
+          <Balance />
+          <TransactionList />
+          <InputSection />
+        </GlobalContext.Provider>
+      </div>
+    </Container>
   );
 }
 

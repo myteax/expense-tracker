@@ -1,0 +1,52 @@
+.balance {
+    /* margin: 5px; */
+    color: #785E4D;
+
+}
+
+.ch3 {
+    color: #A2C0A4;
+}
+
+.ch2 {
+    color: red;
+}
+
+.bodi {
+    position: relative;
+    /* background-color: #EFC9A5; */
+    /* border: 2px solid #BF2C2C; */
+    width: 200px;
+    left: 35%;
+    text-align: center;
+
+    height: 40px;
+    ;
+}
+
+.fit {
+    position: relative;
+    /* margin-left: 40%; */
+    margin-top: 10px;
+    /* margin-right: 10%; */
+    left: 10%;
+    width: 400px;
+    background-color: #EFC9A5;
+    -webkit-border-radius: 80px 80px 80px 80px;
+    -moz-border-radius: 80px 80px 80px 80px;
+    border-radius: 80px 80px 80px 80px;
+
+
+}
+
+p {
+    text-align: center;
+    color: #785E4D;
+    font-weight: 800;
+}
+
+.jdj {
+    background-color: #E8DAC2;
+    -webkit-box-shadow: 2px 2px 9px 10px rgba(0, 0, 0, 0.64);
+    box-shadow: 2px 2px 9px 10px rgba(0, 0, 0, 0.64);
+}

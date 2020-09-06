@@ -1,0 +1,9 @@
+.container {
+
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #785E4D;
+    height: 700px;
+    /* margin-left: 40%; */
+}

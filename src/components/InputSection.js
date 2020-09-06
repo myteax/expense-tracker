@@ -1,5 +1,11 @@
 import React, { useContext, useState } from "react";
 import { GlobalContext } from "../App";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+
+import "./InputSection.css";
+import { red } from "@material-ui/core/colors";
 
 const InputSection = () => {
   const tt = useContext(GlobalContext);
@@ -14,23 +20,62 @@ const InputSection = () => {
       amount: amount,
     };
     tt.additem(yy);
+    setDescription("");
+    setAmount("");
+    document.getElementById("ttf").focus();
   };
+
+  const useStyles = makeStyles({
+    texf: {
+      // height: 50,
+      padding: 5,
+    },
+    bbn: {
+      left: "10%",
+      margin: 5,
+    },
+  });
+  const classes = useStyles();
 
   return (
     <div>
-      <form onSubmit={onsub}>
+      <form onSubmit={onsub} className="tpo" noValidate autoComplete="off">
         <div>
-          <label> Input Description</label>
-          <br />
-          <input type="text" onChange={(e) => setDescription(e.target.value)} />
-        </div>
-        <div>
-          <label> Input Amount</label>
-          <br />
-          <input type="text" onChange={(e) => setAmount(e.target.value)} />
+          {/* <label> Input Description</label>
+          <br /> */}
+          <TextField
+            id="ttf"
+            className={classes.texf}
+            value={description}
+            type="text"
+            onChange={(e) => setDescription(e.target.value)}
+            label="Description"
+            variant="filled"
+          />
         </div>
 
-        <button> Submit Data </button>
+        <div>
+          {/* <label> Input Amount</label>
+          <br /> */}
+          <TextField
+            className={classes.texf}
+            type="text"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            label="Amount"
+            variant="filled"
+          />
+        </div>
+
+        <Button
+          className={classes.bbn}
+          variant="contained"
+          color="secondary"
+          type="submit"
+        >
+          {" "}
+          Submit Data{" "}
+        </Button>
       </form>
     </div>
   );
