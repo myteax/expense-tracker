@@ -16,8 +16,8 @@
     position: relative;
     /* background-color: #EFC9A5; */
     /* border: 2px solid #BF2C2C; */
-    width: 200px;
-    left: 35%;
+    width: auto;
+    /* left: 35%; */
     text-align: center;
 
     height: 40px;
@@ -29,8 +29,8 @@
     /* margin-left: 40%; */
     margin-top: 10px;
     /* margin-right: 10%; */
-    left: 10%;
-    width: 400px;
+    /* left: 10%; */
+    width: auto;
     background-color: #EFC9A5;
     -webkit-border-radius: 80px 80px 80px 80px;
     -moz-border-radius: 80px 80px 80px 80px;
@@ -49,4 +49,10 @@ p {
     background-color: #E8DAC2;
     -webkit-box-shadow: 2px 2px 9px 10px rgba(0, 0, 0, 0.64);
     box-shadow: 2px 2px 9px 10px rgba(0, 0, 0, 0.64);
+}
+
+.falo {
+    position: relative;
+    /* left: 1%; */
+    /* right: auto; */
 }

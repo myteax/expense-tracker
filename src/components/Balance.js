@@ -21,7 +21,7 @@ const Balance = () => {
   }, [tt]);
 
   return (
-    <div>
+    <div className="falo">
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <div className="balance bodi">

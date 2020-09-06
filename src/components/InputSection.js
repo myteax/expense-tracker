@@ -28,10 +28,12 @@ const InputSection = () => {
   const useStyles = makeStyles({
     texf: {
       // height: 50,
+      // psotion: "relative",
+      left: "auto",
       padding: 5,
     },
     bbn: {
-      left: "10%",
+      left: "auto",
       margin: 5,
     },
   });

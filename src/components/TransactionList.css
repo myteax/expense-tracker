@@ -1,9 +1,9 @@
 .tyy {
     position: relative;
     margin: 20px;
-    left: 6%;
+    left: auto;
     padding-top: 20px;
-    width: 400px;
+    width: auto;
     height: 250px;
     overflow: auto;
 
