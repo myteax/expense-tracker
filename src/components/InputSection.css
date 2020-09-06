@@ -3,3 +3,7 @@
     left: 22%;
 
 }
+
+.mat-focused {
+    color: red !important;
+}
