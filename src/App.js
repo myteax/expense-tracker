@@ -4,7 +4,6 @@ import "./App.css";
 import Balance from "./components/Balance";
 import TransactionList from "./components/TransactionList";
 import InputSection from "./components/InputSection";
-import Container from "@material-ui/core/Container";
 
 const transactions = [];
 const reducer = (state, action) => {
@@ -51,8 +50,8 @@ function App() {
   }, [state]);
 
   return (
-    <Container>
-      <div className="container">
+    <React.Fragment>
+      <div className="container" id="connt">
         <GlobalContext.Provider
           value={{
             transactions: state,
@@ -67,7 +66,7 @@ function App() {
           <InputSection />
         </GlobalContext.Provider>
       </div>
-    </Container>
+    </React.Fragment>
   );
 }
 

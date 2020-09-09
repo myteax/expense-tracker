@@ -1,13 +1,16 @@
 import React from "react";
-import "./Header.css";
+import Img from "../image/Component.png";
 
 const Header = () => {
   return (
-    <div>
-      <h2 className="pop">
-        <span className="duu"> BooleanDev</span>
-        <span className="faa"> Expense Tracker </span>
-      </h2>
+    <div className="row">
+      <div className="col">
+        <h1 id="header-c1" className="header-color1">
+          Expense Tracker
+          <img src={Img} id="imgge" />
+          &nbsp;
+        </h1>
+      </div>
     </div>
   );
 };

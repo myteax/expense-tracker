@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "../App";
-import Grid from "@material-ui/core/Grid";
 import "./Balance.css";
 
 const Balance = () => {
@@ -21,28 +20,13 @@ const Balance = () => {
   }, [tt]);
 
   return (
-    <div className="falo">
-      <Grid container spacing={1}>
-        <Grid item xs={12}>
-          <div className="balance bodi">
-            <h3 className={tt.total < 0 ? "ch2" : "ch3"}>
-              Balance ${tt.total}
-            </h3>
-          </div>
-        </Grid>
-      </Grid>
-      <div className="fit">
-        <Grid container spacing={1}>
-          <Grid item xs={2}></Grid>
-          <Grid item xs>
-            <p className="jdj">Income: ${income}</p>
-          </Grid>
-
-          <Grid item xs>
-            <p className="jdj">Expense: -${expense} </p>
-          </Grid>
-          <Grid item xs={2}></Grid>
-        </Grid>
+    <div className="row">
+      <div className="col" style={{ marginTop: "9px" }}>
+        <div className="d-flex float-right" id="balance">
+          <h1 id="htbal" style={{ color: tt.total < 0 ? "red" : "white" }}>
+            Balance: ${tt.total.toString().length > 9 ? "> Range" : tt.total}
+          </h1>
+        </div>
       </div>
     </div>
   );

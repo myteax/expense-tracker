@@ -1,9 +1,3 @@
-.balance {
-    /* margin: 5px; */
-    color: #785E4D;
-
-}
-
 .ch3 {
     color: #A2C0A4;
 }
@@ -12,17 +6,7 @@
     color: red;
 }
 
-.bodi {
-    position: relative;
-    /* background-color: #EFC9A5; */
-    /* border: 2px solid #BF2C2C; */
-    width: auto;
-    /* left: 35%; */
-    text-align: center;
 
-    height: 40px;
-    ;
-}
 
 .fit {
     position: relative;
